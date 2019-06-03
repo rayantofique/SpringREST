@@ -1,0 +1,1 @@
+This is an example program made using Spring's guide online. It features a REST API that can be configured to return different type of messages. It was made to familiarise myself with both Spring and Maven. 
