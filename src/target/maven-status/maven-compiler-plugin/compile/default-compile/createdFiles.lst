@@ -1,4 +1,7 @@
 src/main/java/hello/Application.class
-src/main/java/hello/MessageController.class
 src/main/java/hello/Message.class
 src/main/java/hello/TimeManager.class
+src/main/java/hello/MessageController.class
+src/main/java/hello/UserRepository.class
+src/main/java/hello/SQLController.class
+src/main/java/hello/User.class
