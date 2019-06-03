@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageController {
 
 
-  private static final String template = "Hello, %s!";
+  private static final String template = "Hello %s!";
   private final AtomicLong counter = new AtomicLong();
 
   //The @RequestMapping annotation ensures that HTTP requests to /greeting are mapped to the greeting() method.
@@ -20,6 +20,16 @@ public class MessageController {
   public Message message(@RequestParam(value="name", defaultValue="World") String name) {
     return new Message(counter.incrementAndGet(),
         String.format(template, name));
+  }
+
+
+  @RequestMapping("/time")
+  public Message time()
+  {
+    TimeManager timeManager = new TimeManager();
+    return new Message(counter.incrementAndGet(),
+        timeManager.getDateTime());
+
   }
 
 }
