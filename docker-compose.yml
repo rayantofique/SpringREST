@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  mysql:
+    image: mariadb:5.5
+    ports:
+      - "3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: inetworkdeveloper
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_USER: 'rayan'
+      MYSQL_PASSWORD: '1234'
+
+  springapp:
+    image: testing_spring
+    ports:
+      - "8080"
+    depends_on:
+      - mysql

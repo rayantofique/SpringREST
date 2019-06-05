@@ -20,5 +20,11 @@ I was unable to gain access to the database from my application first precisely 
 06/4/2019
 To get used to running a java application in a docker container itself, I added a basic Dockerfile with the appropriate commands. It ran fine but it could not connect to the SQL docker container because apparently they are on different networks. I initially had my dockerfile in the root folder of the project instead of the src folder, so that was initally causing the faults with the ADD command as the relative pathing was all messed up.
 
+I can also create this into an image so I don't have to keep a reference to the jar file by running: 'docker build . -t <image name>'
+then I can run this like I run any other image. using a -t flag makes it interactive while using a -d flag makes it run in the background
+You can then publish this image on dockerhub but I'm not gonna bother with that.
+
+This link turned out to be the most helpful: https://medium.com/faun/dockerize-your-java-application-ec7ac056d066
+
 My next step is going to be to use a docker compose file to create a docker network with linked connectors.
 
